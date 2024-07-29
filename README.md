@@ -18,7 +18,7 @@ You will slowly descend towards the bottom of the screen. Push **Spacebar** or c
 
 ![Zombie](./Assets/Sprites/zombie.png) - Catching a zombie fish decreases your score and score modifier.
 
-![Octopus](./Assets/Sprites/octopus.png) - Catching an octipus increases your score modestly.
+![Octopus](./Assets/Sprites/octopus.png) - Catching an octopus increases your score modestly.
 
 ![BlueFin Tuna](./Assets/Sprites/tuna.png) - Catching a BlueFin tuna increases your score greatly.
 
