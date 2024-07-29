@@ -12,14 +12,13 @@ You will slowly descend towards the bottom of the screen. Push **Spacebar** or c
 
 ## Fishes
 
-![Shark](./Assets/Sprites/shark.png) - Catching a shark ends the game.
+![Shark](./Assets/Sprites/shark.png) Catching a shark ends the game.
 
-![Goldfish](./Assets/Sprites/goldfish.png) - Catching a goldfish increases your score modifier.
+![Goldfish](./Assets/Sprites/goldfish.png) Catching a goldfish increases your score modifier.
 
-![Zombie](./Assets/Sprites/zombie.png) - Catching a zombie fish decreases your score and score modifier.
+![Zombie](./Assets/Sprites/zombie.png) Catching a zombie fish decreases your score and score modifier.
 
-![Octopus](./Assets/Sprites/octopus.png) - Catching an octopus increases your score modestly.
+![Octopus](./Assets/Sprites/octopus.png) Catching an octopus increases your score modestly.
 
-![BlueFin Tuna](./Assets/Sprites/tuna.png) - Catching a BlueFin tuna increases your score greatly.
-
+![BlueFin Tuna](./Assets/Sprites/tuna.png) Catching a BlueFin tuna increases your score greatly.
 
