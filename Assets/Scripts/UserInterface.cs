@@ -10,12 +10,10 @@ public class UserInterface : MonoBehaviour
     public GameObject playButton;
     public GameManager manager;
 
-    private float endTime;
-    private GameConfig config;
+    [SerializeField]
+    private GameConfigScriptableObject gameConfig;
 
-    void Awake() {
-        config = new GameConfig();
-    }
+    private float endTime;
 
     public void UpdateScore(float score, float multiplier) {
         scoreText.text = $"Score: {score}";
@@ -24,6 +22,7 @@ public class UserInterface : MonoBehaviour
 
     public void UpdateClock(float now) {
         if(endTime - now <= 0) {
+            clockText.text = $"{0f}";
             manager.GameOver();
             return;
         }
@@ -32,7 +31,7 @@ public class UserInterface : MonoBehaviour
     }
 
     public void SetClock(float time) {
-        endTime = time + config.roundTime;
+        endTime = time + gameConfig.roundTime;
     }
 
     public void StartGame() {

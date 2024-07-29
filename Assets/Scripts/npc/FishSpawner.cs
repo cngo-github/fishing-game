@@ -5,28 +5,35 @@ public class FishSpawner : MonoBehaviour
     public GameObject[] fishes;
 
 
-    private GameConfig gameConfig;
+    [SerializeField]
+    private FishSpawnerConfigScriptableObject fishSpawnerConfig;
+
     private float lastSpawnTime = 0;
+    private float top;
+    private float bottom;
+    private float right;
 
     void Awake() {
-        gameConfig = new GameConfig();
+        if(Camera.main != null) {
+            top = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height + fishSpawnerConfig.topYOffset, 0)).y;
+            bottom = Camera.main.ScreenToWorldPoint(new Vector3(0, fishSpawnerConfig.bottomYOffset, 0)).y;
+            right = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width + fishSpawnerConfig.rightXOffset, 0, 0)).x;
+        }
     }
 
     void Update() {
         float currentTime = Time.time;
         
-        if(currentTime - lastSpawnTime < gameConfig.fishSpawnerConfig.interval) {
-            return;
+        if(currentTime - lastSpawnTime >= fishSpawnerConfig.interval) {
+            SpawnFish();
+            lastSpawnTime = currentTime;
         }
+    }
 
+    void SpawnFish() {
         int idx = Random.Range(0, fishes.Length);
-        Vector3 spawnPoint = new Vector3(
-            gameConfig.fishSpawnerConfig.right,
-            Random.Range(gameConfig.fishSpawnerConfig.bottom, gameConfig.fishSpawnerConfig.top),
-            0
-        );
+        Vector3 spawnPoint = new Vector3(right, Random.Range(bottom, top), 0);
         
-        lastSpawnTime = currentTime;
         Instantiate(fishes[idx], spawnPoint, Quaternion.identity);
     }
 }

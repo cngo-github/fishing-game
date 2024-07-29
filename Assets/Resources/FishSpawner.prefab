@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5454324679911007718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2265657424772204910}
+  - component: {fileID: 4938791607087154030}
+  m_Layer: 0
+  m_Name: FishSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2265657424772204910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454324679911007718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4938791607087154030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454324679911007718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af809a86286b61d908f053cef3ec1924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishes:
+  - {fileID: 8373385659021220027, guid: 8e923c9e00efb2286a429b753b7e4b1c, type: 3}
+  - {fileID: 8587002619139220280, guid: 9fe4d54a8963985188e80c1944fea850, type: 3}
+  - {fileID: 883736295532024151, guid: f5ac578bd33cb47048c22aace5f70dea, type: 3}
+  - {fileID: 7306474620254886702, guid: e8a585292e9bc0be6896a011701cf219, type: 3}
+  - {fileID: 3849343698589838223, guid: eeadb6ac78644cefca2e30073ce8e016, type: 3}
+  - {fileID: 3849343698589838223, guid: eeadb6ac78644cefca2e30073ce8e016, type: 3}
+  - {fileID: 3849343698589838223, guid: eeadb6ac78644cefca2e30073ce8e016, type: 3}
+  - {fileID: 883736295532024151, guid: f5ac578bd33cb47048c22aace5f70dea, type: 3}
+  fishSpawnerConfig: {fileID: 11400000, guid: 8a1860f0cac55eaaa9d55631228a9c1c, type: 2}

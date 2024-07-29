@@ -1,25 +1,20 @@
 using UnityEngine;
 
-using static PlayerMovement;
 using static Collision;
 
 public class Player : MonoBehaviour
 {
-    private GameConfig config;
-
-    void Awake() {
-        config = new GameConfig();
-    }
+    [SerializeField]
+    private WorldConfigScriptableObject worldConfig;
+    [SerializeField]
+    private PlayerConfigScriptableObject playerConfig;
 
     void Update() {
-        rPlayerMovement movement = new rPlayerMovement {
-            keyPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0),
-            gravity = config.worldConfig.gravity,
-            strength = config.playerConfig.strength,
-            deltaTime = Time.deltaTime
-        };
-        
-        transform.position += PlayerMovement.calculate(movement);
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+            MoveUp();
+        }
+
+        DropDown();
     }
 
     void OnEnable() {
@@ -27,6 +22,18 @@ public class Player : MonoBehaviour
         position.y = 0f;
 
         transform.position = position;
+    }
+
+    void MoveUp() {
+        Vector3 v = new Vector3(0, playerConfig.strength, 0);
+
+        transform.position += v * Time.deltaTime;
+    }
+
+    void DropDown() {
+        Vector3 v = new Vector3(0, worldConfig.gravity * Time.deltaTime, 0);
+
+        transform.position += v * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
